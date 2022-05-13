@@ -3,7 +3,7 @@
 //  C51_Assignment
 //
 //  Created by iOSDev on 2022-05-12.
-//
+//  Zachary Seguin
 
 import Foundation
 import UIKit
@@ -39,16 +39,13 @@ class OfferTableViewCell: UITableViewCell {
         }
     }
     
-    func toggleLoadingWheel(isHidden: Bool){
-        self.offerImageLoadingView.isHidden = isHidden
-    }
-    
     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        // URL session to get data with completion handler and escaping vars
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
     
     func downloadImage(from url: URL) {
-        
+        // Download image from url, handle UI updates and errors
         getData(from: url) { data, response, error in
             guard let data = data, error == nil else {
                 self.offerImageLoadingView.isHidden = true

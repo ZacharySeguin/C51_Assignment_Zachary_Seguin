@@ -3,7 +3,7 @@
 //  C51_Assignment
 //
 //  Created by iOSDev on 2022-05-12.
-//
+//  Zachary Seguin
 
 import Foundation
 import UIKit
@@ -16,16 +16,12 @@ class OfferDetailsViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     
     var itemImage: UIImage = UIImage()
-    var itemName: String = ""
-    var itemId: String = ""
     var offer: Offer = Offer()
     
-    class func instantiate(image: UIImage, name: String, id: String, offer: Offer) -> OfferDetailsViewController {
+    class func instantiate(image: UIImage, offer: Offer) -> OfferDetailsViewController {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OfferDetailsViewController") as! OfferDetailsViewController
         
-        vc.itemName = name
         vc.itemImage = image
-        vc.itemId = id
         vc.offer = offer
         
         return vc
@@ -33,14 +29,15 @@ class OfferDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // Update UI with offer data after instantiation
         self.itemImageView.image = self.itemImage
-        self.itemNameLabel.text = self.itemName
-        self.itemIdLabel.text = self.itemId
-        self.backButton.layer.cornerRadius = self.backButton.frame.height/2
+        self.itemNameLabel.text = self.offer.name
+        self.itemIdLabel.text = self.offer.id
+        self.backButton.layer.cornerRadius = self.backButton.frame.height/2 // Make back button round
     }
     
     @IBAction func backButtonAction(_ sender: UIButton) {
+        // Return to intial view controller
         self.dismiss(animated: true)
     }
     

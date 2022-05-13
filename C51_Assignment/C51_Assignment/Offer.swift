@@ -3,7 +3,7 @@
 //  C51_Assignment
 //
 //  Created by iOSDev on 2022-05-12.
-//
+//  Zachary Seguin
 
 import Foundation
 
@@ -29,6 +29,7 @@ class Offer {
     }
     
     func printOfferDescription(){
+        // Print func for testing purposes
         print("\n~~~~~~~~~~~~~\n" +
               "Offer ID: \(self.id)\n" +
               "Name: \(self.name)\n" +

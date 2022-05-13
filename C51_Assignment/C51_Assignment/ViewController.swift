@@ -3,7 +3,7 @@
 //  C51_Assignment
 //
 //  Created by iOSDev on 2022-05-11.
-//
+//  Zachary Seguin
 
 import UIKit
 
@@ -22,7 +22,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func getOffersFromJSON(){
-        
+        // Read file and parse JSON data into offer instances for offerList
         let data = readLocalFile(forName: "c51")
         if(data == nil){ return }
         print("Parsing JSON data...")
@@ -54,24 +54,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print("Failed to load: \(error.localizedDescription)")
         }
         
-        if(self.offerList.count != 0){
+        if(self.offerList.count != 0){ // If offer objects were created, reload table and generate cells
             self.offerTableView.isHidden = false
             self.offerTableView.reloadData()
         }else{
-            self.offerTableView.isHidden = true
+            self.offerTableView.isHidden = true // Hide table if it has no content to display no content UI
         }
         
     }
     
-    private func readLocalFile(forName name: String) -> Data? {
+    func readLocalFile(forName name: String) -> Data? {
         do {
+            // Attempt to find file and read data
             if let bundlePath = Bundle.main.path(forResource: name,
                                                  ofType: "json"),
                 let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
                 return jsonData
             }
         } catch {
-            print(error)
+            print("Read local file: \(error)")
         }
         
         return nil
@@ -87,17 +88,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : OfferTableViewCell = self.offerTableView.dequeueReusableCell(withIdentifier: "OfferTableViewCell") as! OfferTableViewCell
-    
+        
+        // Configure cell with data from offer at indexPath
         cell.configure(offer: self.offerList[indexPath.row], cellId: indexPath.row);
         
         return cell
     }
 
     @IBAction func cellSelectedButtonAction(_ sender: UIButton) {
+        // Present OfferDetailsViewController initialized with data from selected cell (not necessary for assignment)
         print("User tapped on cell with ID: \(sender.tag)")
         let selectedCell = self.offerTableView.cellForRow(at: IndexPath(row: sender.tag, section: 0)) as! OfferTableViewCell
-        let vc = OfferDetailsViewController.instantiate(image: selectedCell.offerImageView.image ?? UIImage(), name: selectedCell.offerNameLabel.text ?? "", id: selectedCell.offerIdLabel.text ?? "", offer: self.offerList[sender.tag])
+        let vc = OfferDetailsViewController.instantiate(image: selectedCell.offerImageView.image ?? UIImage(), offer: self.offerList[sender.tag])
         self.present(vc, animated: true)
+        
     }
     
 }
