@@ -17,31 +17,67 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Esa-aq-btt">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="144"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="ZfG-Sn-tQD">
-                                        <rect key="frame" x="150.5" y="64" width="113" height="46.5"/>
+                                        <rect key="frame" x="150.5" y="57" width="113" height="46.5"/>
                                         <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort by: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iv3-lY-gta">
+                                        <rect key="frame" x="20" y="127.5" width="77.5" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="rQg-eT-PLN">
+                                        <rect key="frame" x="102.5" y="124" width="291.5" height="31"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFd-lp-pse">
+                                                <rect key="frame" x="0.0" y="0.0" width="144.5" height="31"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Name"/>
+                                                <connections>
+                                                    <action selector="sortByNameButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZtI-ZV-5i2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEd-r6-RyY">
+                                                <rect key="frame" x="147.5" y="0.0" width="144" height="31"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Cashback"/>
+                                                <connections>
+                                                    <action selector="sortByCashbackButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mTJ-MZ-hA7"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.54842173496271873" green="0.76942896842956543" blue="0.45090032979484046" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZfG-Sn-tQD" secondAttribute="bottom" constant="20" id="3Ao-vd-g8h"/>
+                                    <constraint firstAttribute="bottom" secondItem="rQg-eT-PLN" secondAttribute="bottom" constant="5" id="6MA-XG-BRr"/>
+                                    <constraint firstItem="rQg-eT-PLN" firstAttribute="leading" secondItem="Iv3-lY-gta" secondAttribute="trailing" constant="5" id="7u0-hQ-8uN"/>
                                     <constraint firstItem="ZfG-Sn-tQD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Esa-aq-btt" secondAttribute="leading" constant="20" id="Oqk-AO-2vb"/>
                                     <constraint firstItem="ZfG-Sn-tQD" firstAttribute="centerX" secondItem="Esa-aq-btt" secondAttribute="centerX" id="QyO-Nx-Bg7"/>
-                                    <constraint firstAttribute="width" secondItem="Esa-aq-btt" secondAttribute="height" multiplier="23:8" id="ePo-oS-KDy"/>
+                                    <constraint firstAttribute="trailing" secondItem="rQg-eT-PLN" secondAttribute="trailing" constant="20" id="egy-52-DwY"/>
+                                    <constraint firstAttribute="bottom" secondItem="Iv3-lY-gta" secondAttribute="bottom" constant="9" id="jHM-xW-l5g"/>
                                     <constraint firstItem="ZfG-Sn-tQD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Esa-aq-btt" secondAttribute="top" constant="50" id="jQU-xC-euQ"/>
-                                    <constraint firstItem="ZfG-Sn-tQD" firstAttribute="centerY" secondItem="Esa-aq-btt" secondAttribute="centerY" constant="15" id="x4O-2R-3IR"/>
+                                    <constraint firstAttribute="height" constant="160" id="jWd-dl-BxX"/>
+                                    <constraint firstItem="Iv3-lY-gta" firstAttribute="leading" secondItem="Esa-aq-btt" secondAttribute="leading" constant="20" id="sYt-Dc-lK6"/>
+                                    <constraint firstItem="ZfG-Sn-tQD" firstAttribute="centerY" secondItem="Esa-aq-btt" secondAttribute="centerY" id="x4O-2R-3IR"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZfG-Sn-tQD" secondAttribute="trailing" constant="20" id="ydq-su-E85"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNI-kv-11h">
-                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
+                                <rect key="frame" x="0.0" y="160" width="414" height="702"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ffs-cW-tBa">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="718"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="702"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OfferTableViewCell" id="6vj-Op-Tas" customClass="OfferTableViewCell" customModule="C51_Assignment" customModuleProvider="target">
@@ -196,11 +232,13 @@
                     </view>
                     <connections>
                         <outlet property="offerTableView" destination="Ffs-cW-tBa" id="Mdh-1X-6vd"/>
+                        <outlet property="sortByCashbackButton" destination="oEd-r6-RyY" id="7aa-TF-f55"/>
+                        <outlet property="sortByNameButton" destination="QFd-lp-pse" id="JTH-ZS-iXe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="117"/>
+            <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
         </scene>
         <!--Offer Details View Controller-->
         <scene sceneID="tvW-ij-bHq">
