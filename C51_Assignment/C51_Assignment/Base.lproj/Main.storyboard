@@ -214,10 +214,10 @@
                                 <rect key="frame" x="20" y="124.5" width="374" height="273"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Np1-4I-gVY">
-                                        <rect key="frame" x="112" y="0.0" width="150" height="154"/>
+                                        <rect key="frame" x="112" y="0.0" width="150" height="160.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ITEM NAME" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="ThN-7q-8kq">
-                                        <rect key="frame" x="0.0" y="184" width="374" height="35.5"/>
+                                        <rect key="frame" x="0.0" y="190.5" width="374" height="29"/>
                                         <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -230,12 +230,9 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="ThN-7q-8kq" firstAttribute="height" secondItem="YEs-QM-Tim" secondAttribute="height" multiplier="0.130037" id="1ZW-Mb-VDk"/>
                                     <constraint firstAttribute="trailing" secondItem="ThN-7q-8kq" secondAttribute="trailing" id="6JZ-18-w7I"/>
                                     <constraint firstAttribute="trailing" secondItem="M0p-jA-U1N" secondAttribute="trailing" id="6RC-QJ-Ti6"/>
                                     <constraint firstItem="M0p-jA-U1N" firstAttribute="leading" secondItem="YEs-QM-Tim" secondAttribute="leading" id="Mjv-i9-4rd"/>
-                                    <constraint firstItem="Np1-4I-gVY" firstAttribute="height" secondItem="YEs-QM-Tim" secondAttribute="height" multiplier="0.564103" id="gvf-Na-PUV"/>
-                                    <constraint firstItem="M0p-jA-U1N" firstAttribute="height" secondItem="YEs-QM-Tim" secondAttribute="height" multiplier="0.0860806" id="tGj-1t-uGK"/>
                                     <constraint firstItem="ThN-7q-8kq" firstAttribute="leading" secondItem="YEs-QM-Tim" secondAttribute="leading" id="xcS-Np-wTA"/>
                                 </constraints>
                             </stackView>
