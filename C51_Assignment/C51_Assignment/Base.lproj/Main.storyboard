@@ -235,7 +235,6 @@
                                     <constraint firstAttribute="trailing" secondItem="M0p-jA-U1N" secondAttribute="trailing" id="6RC-QJ-Ti6"/>
                                     <constraint firstItem="M0p-jA-U1N" firstAttribute="leading" secondItem="YEs-QM-Tim" secondAttribute="leading" id="Mjv-i9-4rd"/>
                                     <constraint firstItem="Np1-4I-gVY" firstAttribute="height" secondItem="YEs-QM-Tim" secondAttribute="height" multiplier="0.564103" id="gvf-Na-PUV"/>
-                                    <constraint firstItem="Np1-4I-gVY" firstAttribute="width" secondItem="YEs-QM-Tim" secondAttribute="width" multiplier="0.40107" id="ny2-Eg-M1W"/>
                                     <constraint firstItem="M0p-jA-U1N" firstAttribute="height" secondItem="YEs-QM-Tim" secondAttribute="height" multiplier="0.0860806" id="tGj-1t-uGK"/>
                                     <constraint firstItem="ThN-7q-8kq" firstAttribute="leading" secondItem="YEs-QM-Tim" secondAttribute="leading" id="xcS-Np-wTA"/>
                                 </constraints>
